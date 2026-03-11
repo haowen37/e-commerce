@@ -132,3 +132,59 @@ footer {
   color: #888;
   font-size: 0.8rem;
 }
+
+.product-page {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  padding: 50px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* image area */
+.main-img {
+  flex: 1;
+  min-width: 300px;
+  max-width: 600px;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* info area */
+.info {
+  flex: 1;
+  min-width: 300px;
+}
+
+.info h1 {
+  font-size: 2.5rem;
+}
+
+.artist {
+  font-size: 1.5rem;
+  color: gray;
+}
+
+.specs div {
+  margin-bottom: 15px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 5px;
+}
+
+.specs span {
+  font-weight: bold;
+  margin-right: 15px;
+  color: #555;
+  display: inline-block;
+  width: 100px;
+}
+
+.back {
+  display: inline-block;
+  margin-top: 20px;
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+}

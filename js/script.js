@@ -9,6 +9,16 @@ if (localStorage.favorites) {
   favoriteArr = [];
 } //check if there is a favorites array in localStorage, if not create an empty one
 
+const productImages = document.querySelectorAll(
+  ".product-card img:first-child",
+);
+if (productImages.length > 0) {
+  productImages[0].style.cursor = "pointer";
+  productImages[0].onclick = function () {
+    window.location.href = "product.html";
+  };
+}
+
 for (let i = 0; i < favoriteIcons.length; i++) {
   for (let j = 0; j < favoriteArr.length; j++) {
     if (favoriteIcons[i].dataset.id === favoriteArr[j].id) {
