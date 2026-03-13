@@ -102,6 +102,7 @@ nav a.active {
 }
 
 .hero-overlay {
+  font-size: 1.3rem;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -187,4 +188,8 @@ footer {
   color: black;
   font-weight: bold;
   text-decoration: none;
+}
+
+.back:hover {
+  text-decoration: underline;
 }

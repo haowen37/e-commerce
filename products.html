@@ -3,23 +3,27 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>The Street Museum - Catalog</title>
+    <title>The Print Shop - Catalog</title>
     <link rel="stylesheet" href="css/main.css" />
   </head>
   <body>
     <header>
-      <h1>The Street Museum</h1>
+      <h1>The Print Shop</h1>
       <nav>
         <a href="index.html">Home</a>
-        <a href="products.html">Artworks</a>
-        <a href="cart.html">Favorites</a>
+        <a href="products.html" class="active">Artworks</a>
+        <a href="cart.html">Wishlist</a>
       </nav>
     </header>
 
     <main>
       <div class="product-grid">
         <div class="product-card">
-          <img src="img/art1.jpg" alt="The Silent Witness" />
+          <a
+            href="product.html?id=1&img=img/art1.jpg&title=The%20Silent%20Witness"
+          >
+            <img src="img/art1.jpg" alt="Tree in the fog" />
+          </a>
           <img
             src="img/heart-outline.png"
             class="heart-outline"
@@ -27,10 +31,14 @@
             data-img="img/art1.jpg"
             alt="Add to favorites"
           />
+          <div class="card-details">
+            <h3>Tree in the fog</h3>
+            <p class="price">$120.00</p>
+          </div>
         </div>
 
         <div class="product-card">
-          <img src="img/art2.jpg" alt="Desolate Prairie" />
+          <img src="img/art2.jpg" alt="Wooden House" />
           <img
             src="img/heart-outline.png"
             class="heart-outline"
@@ -38,6 +46,10 @@
             data-img="img/art2.jpg"
             alt="Add to favorites"
           />
+          <div class="card-details">
+            <h3>Wooden House</h3>
+            <p class="price">$120.00</p>
+          </div>
         </div>
 
         <div class="product-card">
@@ -49,6 +61,10 @@
             data-img="img/art3.jpg"
             alt="Add to favorites"
           />
+          <div class="card-details">
+            <h3>Urban Rhythm</h3>
+            <p class="price">$120.00</p>
+          </div>
         </div>
 
         <div class="product-card">
@@ -60,6 +76,10 @@
             data-img="img/art4.jpg"
             alt="Add to favorites"
           />
+          <div class="card-details">
+            <h3>Light and Shadow</h3>
+            <p class="price">$120.00</p>
+          </div>
         </div>
 
         <div class="product-card">
@@ -71,10 +91,14 @@
             data-img="img/art5.jpg"
             alt="Add to favorites"
           />
+          <div class="card-details">
+            <h3>The Red Wall</h3>
+            <p class="price">$120.00</p>
+          </div>
         </div>
 
         <div class="product-card">
-          <img src="img/art6.jpg" alt="Coastal Solitude" />
+          <img src="img/art6.jpg" alt="Trees on the shore" />
           <img
             src="img/heart-outline.png"
             class="heart-outline"
@@ -82,6 +106,10 @@
             data-img="img/art6.jpg"
             alt="Add to favorites"
           />
+          <div class="card-details">
+            <h3>Trees on the shore</h3>
+            <p class="price">$120.00</p>
+          </div>
         </div>
 
         <div class="product-card">
@@ -93,6 +121,10 @@
             data-img="img/art7.jpg"
             alt="Add to favorites"
           />
+          <div class="card-details">
+            <h3>The Waiting Bench</h3>
+            <p class="price">$120.00</p>
+          </div>
         </div>
 
         <div class="product-card">
@@ -104,10 +136,14 @@
             data-img="img/art8.jpg"
             alt="Add to favorites"
           />
+          <div class="card-details">
+            <h3>Journey Within</h3>
+            <p class="price">$120.00</p>
+          </div>
         </div>
 
         <div class="product-card">
-          <img src="img/art9.jpg" alt="Remnants of Time" />
+          <img src="img/art9.jpg" alt="ruins" />
           <img
             src="img/heart-outline.png"
             class="heart-outline"
@@ -115,12 +151,16 @@
             data-img="img/art9.jpg"
             alt="Add to favorites"
           />
+          <div class="card-details">
+            <h3>Ruins</h3>
+            <p class="price">$120.00</p>
+          </div>
         </div>
       </div>
     </main>
 
     <footer>
-      <p>&copy; 2026 The Street Museum</p>
+      <p>&copy; 2026 The Print Shop. All rights reserved.</p>
     </footer>
 
     <script src="js/script.js"></script>

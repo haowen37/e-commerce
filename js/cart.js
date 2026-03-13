@@ -1,53 +1,55 @@
 const favGrid = document.querySelector(".product-grid");
-//get the favorite container
 
 function renderFavorites() {
-  const favoritesData = localStorage.getItem("favorites"); //get the favorites from localStorage
-  let favoriteArr;
-
+  // get favorites from localStorage
+  const favoritesData = localStorage.getItem("favorites");
+  let favoriteArr = [];
   if (favoritesData) {
-    favoriteArr = JSON.parse(favoritesData); //turn the string back into an array
-  } else {
-    favoriteArr = [];
+    favoriteArr = JSON.parse(favoritesData);
   }
 
-  favGrid.innerHTML = ""; //clear the grid before adding new items
+  // Clear the grid before rendering
+  favGrid.innerHTML = "";
 
+  //check if there are any favorites, if not show a message
   if (favoriteArr.length === 0) {
-    const emptyMessage = document.createElement("p");
-    emptyMessage.innerText = "Your gallery is currently empty.";
-    emptyMessage.style.textAlign = "center";
-    emptyMessage.style.gridColumn = "1/-1";
-    favGrid.appendChild(emptyMessage);
+    favGrid.innerHTML =
+      '<p style="grid-column: 1/-1; text-align: center;">Your wishlist is empty.</p>';
     return;
-    //return early if there are no favorites
   }
 
+  // Loop through the favorites array and create a card for each item, using the same structure as the Shop page
   for (let i = 0; i < favoriteArr.length; i++) {
+    const item = favoriteArr[i];
+
+    // Create a card element
     const card = document.createElement("div");
     card.className = "product-card";
 
-    const img = document.createElement("img");
-    img.src = favoriteArr[i].img;
-    img.alt = "Saved Artwork";
+    // Set the inner HTML of the card with the item details
+    card.innerHTML = `
+      <img src="${item.img}" alt="Saved Item">
+      <img src="img/heart-solid.png" class="heart-outline" onclick="deleteItem(${i})">
+      <div class="card-details">
+        <p class="price">$120.00</p>
+      </div>
+    `;
 
-    const removeIcon = document.createElement("img");
-    removeIcon.src = "img/heart-solid.png";
-    removeIcon.className = "heart-outline"; // Using the same CSS class for position
-
-    removeIcon.onclick = function () {
-      favoriteArr.splice(i, 1);
-
-      const jsonString = JSON.stringify(favoriteArr);
-      localStorage.setItem("favorites", jsonString);
-
-      renderFavorites();
-    };
-
-    card.appendChild(img);
-    card.appendChild(removeIcon);
     favGrid.appendChild(card);
   }
 }
+// Function to delete an item from favorites
+function deleteItem(index) {
+  const favoritesData = localStorage.getItem("favorites");
+  let favoriteArr = JSON.parse(favoritesData);
 
+  // Remove the item from the array
+  favoriteArr.splice(index, 1);
+
+  // Update localStorage and re-render the favorites
+  localStorage.setItem("favorites", JSON.stringify(favoriteArr));
+  renderFavorites();
+}
+
+// Initial render of favorites on page load
 renderFavorites();
